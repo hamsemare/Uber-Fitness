@@ -1,0 +1,19 @@
+{
+  "name": "uberfitness",
+  "version": "1.0.0",
+  "description": "Allows users to completely track and log their workouts",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hamsemare/Uber-Fitness.git"
+  },
+  "author": "Hamse Mare",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hamsemare/Uber-Fitness/issues"
+  },
+  "homepage": "https://github.com/hamsemare/Uber-Fitness#readme"
+}
