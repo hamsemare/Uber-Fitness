@@ -1,3 +1,5 @@
+//Citations: https://github.com/bradtraversy/meanauthapp/issues/15
+
 //Authentication, register route and authenticate route and a profile route that we protected
 const JwtStrategy = require('passport-jwt').Strategy;
 const ExtractJwt= require("passport-jwt").ExtractJwt;
@@ -9,7 +11,7 @@ module.exports= function(passport){
 	opts.jwtFromRequest= ExtractJwt.fromAuthHeaderWithScheme("jwt");
 	opts.secretOrKey= config.secret;
 	passport.use(new JwtStrategy(opts, function(jwt_payload, done){
-		User.getUserById(jwt_payload._doc._id, function(err, user){
+		User.getUserByUsername(jwt_payload.username, function(err, user){
 			if(err){
 				return done(err, false);
 			}

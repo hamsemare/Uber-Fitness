@@ -13,18 +13,9 @@ router.post("/register", function(req, res, next){
 		password: req.body.password
 	});
 
-	const username= req.body.username;
-
-	User.getUserByUsername(username, function(err, user){
+	User.getUserByUsername(newUser.username, function(err, user){
 		if(err) throw err;
-		if(user){
-			res.json({
-				success: false,
-				msg: "Username is Taken!!"
-			});
-		}
-		else{
-
+		if (!user){
 			User.addUser(newUser, function(err, user){
 				if(err){
 					res.json({success: false, msg: "failed to register user."});
@@ -33,6 +24,10 @@ router.post("/register", function(req, res, next){
 					res.json({success: true, msg: "User registered"});
 				}
 			});
+		}
+
+		else{
+			return res.json({success: false, msg:"Username Exists"});
 		}
 	});
 
