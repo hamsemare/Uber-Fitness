@@ -3,26 +3,36 @@
 	<h2 class= "page-header" style="font-size: 50px; text-align: center; margin-top: 50px; margin-bottom: 50px; text-decoration: underline">CREATE ACCOUNT</h2>
 	<form (submit)= "onRegisterSubmit()">
 		<div class= "form-group">
-			<label style="font-size: 20px; margin-top: 10px; margin-bottom: 10px">Name</label>
+			<label style="font-size: 20px; margin-top: 10px; margin-bottom: 10px">Name:</label>
 			<input type="text" [(ngModel)]="name" name="name" class="form-control">
 		</div>
 
 		<div class= "form-group">
-			<label style="font-size: 20px; margin-top: 10px; margin-bottom: 10px">Username</label>
+			<label style="font-size: 20px; margin-top: 10px; margin-bottom: 10px">Username:</label>
 			<input type="text" [(ngModel)]="username" name="username" class="form-control">
 		</div>
 
 		<div class= "form-group">
-			<label style="font-size: 20px; margin-top: 10px; margin-bottom: 10px">Email</label>
+			<label style="font-size: 20px; margin-top: 10px; margin-bottom: 10px">Email:</label>
 			<input type="text" [(ngModel)]="email" name="email" class="form-control">
 		</div>
 
 		<div class= "form-group">
-			<label style="font-size: 20px; margin-top: 10px; margin-bottom: 10px">Password</label>
+			<label style="font-size: 20px; margin-top: 10px; margin-bottom: 10px">Password:</label>
 			<input type="text" [(ngModel)]="password" name="password" class="form-control">
 		</div>
 
 		<input style="font-size: 20px; margin-top: 20px" type="submit" class="btn btn-success" value="SUBMIT">
 	</form>
+
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<div class="panel-body">
+	  <h5 class="text-center"><i class="ion-link"></i>Already have an account? <a style= "text-align: center; font-size: 1.5em"class="ion-link" href="/login">LOG IN</a></h5>
+	  <br/>
+	  <br/>
+	</div>
 
 </html>

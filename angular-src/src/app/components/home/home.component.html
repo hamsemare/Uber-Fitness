@@ -1,28 +1,52 @@
 <html>
 <style>
 
-    h2,p, a{
+    h2,p, a, p{
         text-align: center;
     }
+	p{
+		font-size: 1.5em;
+		margin: 30 30;
+	}
+	a{
+		font-size: 1.5em;
+	}
     h2{
         text-decoration: underline;
         font-size: 6em;
     }
+	.container{
+		background: #B5CAD2;
+	}
+	button{
+		background: #B5CAD2;
+	}
 </style>
 
 <div class="container">
         <div class="jumbotron">
           <h2> UBER-FITNESS</h2>
-		  <p></p>
-		  <p>Welcome</p>
+		  <br/>
+		  <br/>
+		  <p><strong>Uber-Fitness</strong> is an simple yet powerful workout logger.<br/> It allows users to easily track their workout sessions. <strong>Uber-Fitness</strong> includes a large collection of exercises to choose from.</p>
+		  <br/>
+		  <br/>
 		  <p>
-            <a class="btn btn-lg btn-success" href="/login">LOGIN</a>
+            <a class="btn btn-lg btn-success" href="/login">LOG IN</a>
           </p>
 		  <div class="panel-body">
-            <h5 class="text-center"><i class="ion-link"></i> Don't Have an account<a class="btn btn-sm" href="/register">CREATE AN ACCOUNT</a></h5>
+            <h5 class="text-center"><i class="ion-link"></i> Don't have an account? <a class="ion-link" href="/register">Create Account</a></h5>
+		<br/>
+		<br/>
           </div>
-		  <p>UberFitness is powered by <strong>I&H WARE</strong>.<br/>To continue, please log in with your UberFitness account or create a new account.</p>
-
         </div>
  </div>
+ <footer>
+	 <p><strong>UberFitness</strong> is powered by <strong>I&H WARE</strong>.<br/>To continue, please log in with your <strong>Uber-Fitness</strong> account or create a new account.</p>
+	 <p>
+		 <!-- Just need to link them -->
+		 <button style= "font-size: 1.2em;" class= "btn" href="/login">Log in</button>
+		 <button  style= "font-size: 1.2em;" class= "btn" href="/register">Create Account</button>
+	 </p>
+ </footer>
 </html>
