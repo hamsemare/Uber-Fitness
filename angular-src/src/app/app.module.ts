@@ -15,14 +15,16 @@ import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfileComponent } from './components/profile/profile.component';
 
-import {ValidateService} from "./services/validate.service"
+import {ValidateService} from "./services/validate.service";
+import { AddComponent } from './components/add/add.component';
 
 const appRoutes: Routes=[
   {path: "", component : HomeComponent},
   {path: "register", component : RegisterComponent},
   {path: "login", component : LoginComponent},
   {path: "dashboard", component : DashboardComponent, canActivate: [AuthGuard]},
-  {path: "profile", component : ProfileComponent, canActivate: [AuthGuard]}
+  {path: "profile", component : ProfileComponent, canActivate: [AuthGuard],
+  {path: "add", component : AddComponent, canActivate: [AuthGuard]},
 ]
 
 @NgModule({
@@ -33,7 +35,8 @@ const appRoutes: Routes=[
     RegisterComponent,
     HomeComponent,
     DashboardComponent,
-    ProfileComponent
+    ProfileComponent,
+    AddComponent
   ],
 
   imports: [
