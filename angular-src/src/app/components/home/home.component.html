@@ -1,3 +1,5 @@
+<!-- Citations: -->
+<!-- https://www.google.com/imgres?imgurl=https%3A%2F%2Fthumbs.dreamstime.com%2Fz%2Fbodybuilding-powerlifting-vector-illustration-38509994.jpg&imgrefurl=https%3A%2F%2Fwww.dreamstime.com%2Fstock-images-bodybuilding-powerlifting-vector-illustration-image38509994&docid=fdEL4ULT2o3vbM&tbnid=IFV_vxiHERVXeM%3A&vet=10ahUKEwjf6PetmcrbAhV3BjQIHVavC0QQMwi6AigvMC8..i&w=1300&h=1053&client=safari&bih=725&biw=1440&q=powerlifting%20logos&ved=0ahUKEwjf6PetmcrbAhV3BjQIHVavC0QQMwi6AigvMC8&iact=mrc&uact=8#h=1053&imgdii=qIfoIlm9o4K7mM:&vet=10ahUKEwjf6PetmcrbAhV3BjQIHVavC0QQMwi6AigvMC8..i&w=1300 -->
 <html>
 <style>
 
@@ -21,6 +23,15 @@
 	button{
 		background: #B5CAD2;
 	}
+	.inline-block {
+		float: left;
+  		width: 50%;
+	}
+	.banner::after {
+	  content: "";
+	  clear: both;
+	  display: table;
+	}
 </style>
 
 <div class="container">
@@ -31,22 +42,24 @@
 		  <p><strong>Uber-Fitness</strong> is an simple yet powerful workout logger.<br/> It allows users to easily track their workout sessions. <strong>Uber-Fitness</strong> includes a large collection of exercises to choose from.</p>
 		  <br/>
 		  <br/>
-		  <p>
-            <a class="btn btn-lg btn-success" href="/login">LOG IN</a>
-          </p>
-		  <div class="panel-body">
-            <h5 class="text-center"><i class="ion-link"></i> Don't have an account? <a class="ion-link" href="/register">Create Account</a></h5>
-		<br/>
-		<br/>
-          </div>
         </div>
  </div>
+<!-- Add body building images here -->
+<div id="banner">
+	<div class="inline-block">
+        <img src="../../../assets/logo.jpg">
+    </div>
+	<div class="inline-block">
+        <img src="../../../assets/logo.jpg">
+		<br/>
+		<br/>
+		<br/>
+		<br/>
+    </div>
+</div>
+
  <footer>
-	 <p><strong>UberFitness</strong> is powered by <strong>I&H WARE</strong>.<br/>To continue, please log in with your <strong>Uber-Fitness</strong> account or create a new account.</p>
-	 <p>
-		 <!-- Just need to link them -->
-		 <button style= "font-size: 1.2em;" class= "btn" href="/login">Log in</button>
-		 <button  style= "font-size: 1.2em;" class= "btn" href="/register">Create Account</button>
-	 </p>
+	 <p><strong>UberFitness</strong> is powered by <strong>I&H WARE</strong>.</p>
  </footer>
+
 </html>
