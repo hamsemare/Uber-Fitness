@@ -8,9 +8,25 @@ import { tokenNotExpired } from 'angular2-jwt';
 export class AuthService {
 	authToken: any;
 	user: any;
+	event: any;
 
 	constructor(private http: Http) {
 		// this.isDev = false;  // Change to false before deployment
+	}
+	addEvent(event){
+		let headers = new Headers();
+		headers.append('Content-Type', 'application/json');
+		return this.http.post('http://localhost:3000/users/addEvent', event, {headers: headers})
+		.map(res => res.json());
+	}
+
+	getEvents(){
+		let headers = new Headers();
+		this.loadToken();
+		headers.append('Authorization', this.authToken);
+		headers.append('Content-Type', 'application/json');
+		return this.http.get('http://localhost:3000/users/events', {headers: headers})
+		.map(res => res.json());
 	}
 
 	registerUser(user) {
