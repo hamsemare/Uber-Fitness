@@ -1,6 +1,7 @@
 const express= require("express");
 const router= express.Router();
 const User= require("../models/user");
+const Event= require("../models/event");
 const passport= require("passport");
 const jwt= require("jsonwebtoken");
 const config= require("../config/database");
@@ -77,5 +78,41 @@ router.post("/authenticate", function(req, res, next){
 router.get("/profile", passport.authenticate("jwt", {session:false}), function(req, res, next){
 	res.json({user: req.user});
 });
+
+
+
+
+router.post("/addEvent", function(req, res, next){
+	let newEvent= new Event({
+		username: req.body.username,
+		name: req.body.name,
+		date: req.body.date,
+		reps: req.body.reps,
+		sets: req.body.sets
+	});
+
+	Event.addEvent(newEvent, function(err, event){
+			if(err){
+				res.json({success: false, msg: "failed to"});
+			}
+			else{
+				res.json({success: true, msg: "Added"});
+			}
+	});
+});
+
+router.get('/events', function(req, res, next) {
+  Event.find({}, function(err, events) {
+    var eventList = {};
+
+    events.forEach(function(event) {
+      eventList[event._id] = event;
+    });
+
+    res.send(eventsList);
+  });
+});
+
+
 
 module.exports= router;

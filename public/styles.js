@@ -539,7 +539,7 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/Hamsemare/meanauthapp/angular-src/src/styles.css */"./src/styles.css");
+module.exports = __webpack_require__(/*! /Users/Hamsemare/projects/UberFitness/angular-src/src/styles.css */"./src/styles.css");
 
 
 /***/ })

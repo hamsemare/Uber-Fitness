@@ -22,8 +22,6 @@ export class AuthService {
 
 	getEvents(){
 		let headers = new Headers();
-		this.loadToken();
-		headers.append('Authorization', this.authToken);
 		headers.append('Content-Type', 'application/json');
 		return this.http.get('http://localhost:3000/users/events', {headers: headers})
 		.map(res => res.json());

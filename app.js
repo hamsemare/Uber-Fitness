@@ -26,8 +26,7 @@ const port=3000;
 
 //Body parser  Middleware
 app.use(bodyParser());
-const users= require("./routes/users")
-
+const users= require("./routes/users");
 //Allows access our page from different ports
 app.use(cors());
 
