@@ -27,8 +27,7 @@
 		<h2 class= "page-header" style="font-size: 50px; text-align: center; margin-top: 50px; margin-bottom: 50px; text-transform: uppercase; text-decoration: underline">Uber-Fitness Calendar</h2>
 		<br/>
 		<div *ngIf="calendarOptions">
-			<ng-fullcalendar #ucCalendar [options]="calendarOptions"  (eventClick)="eventClick($event.detail)" (eventDrop)="updateEvent($event.detail)"
-			(eventResize)="updateEvent($event.detail)" (clickButton)="clickButton($event.detail)"></ng-fullcalendar>
+			<ng-fullcalendar #ucCalendar [options]="calendarOptions" [(eventsModel)]="events"></ng-fullcalendar>
 		</div>
 	</div>
 
@@ -37,7 +36,7 @@
 			<form (submit)= "onSubmit()">
 				<h2 class= "page-header" style="font-size: 50px; text-align: center; margin-top: 50px; margin-bottom: 50px; text-transform: uppercase; text-decoration: underline">ADD WORKOUT</h2>
 				<input id="name" style="font-size: 1.2em;  margin-bottom: 40px" class="form-control" type="text" [(ngModel)]="name" name="name" placeholder="Name of Workout">
-				<input id="date" style="font-size: 1.2em;  margin-bottom: 40px" class="form-control" type="text" name="date" [(ngModel)]="date" placeholder="Enter Date (DD/MM/YYYY)" >
+				<input id="date" style="font-size: 1.2em;  margin-bottom: 40px" class="form-control" type="text" name="date" [(ngModel)]="date" placeholder="Enter Date (YYYY-MM-DD)" >
 				<input id="sets" style="font-size: 1.2em;  margin-bottom: 40px" class="form-control" type="text" name="sets"[(ngModel)]="sets" placeholder="Enter # of Sets">
 				<input id="reps" style="font-size: 1.2em;  margin-bottom: 40px" class="form-control" type="text" name="reps" [(ngModel)]="reps" placeholder="Enter # of Reps">
 				<div class="w3-container w3-border-top w3-padding-16 w3-light-grey">

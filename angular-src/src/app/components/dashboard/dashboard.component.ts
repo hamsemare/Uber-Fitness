@@ -7,7 +7,7 @@ import { Options } from 'fullcalendar';
 import {ValidateService} from "../../services/validate.service";
 import {FlashMessagesService} from "angular2-flash-messages";
 import {AuthService} from "../../services/auth.service";
-
+import {EventService} from "../../services/event.service";
 
 @Component({
 	selector: 'app-dashboard',
@@ -20,30 +20,36 @@ export class DashboardComponent implements OnInit {
 	sets: String;
 	reps: String;
 	username: String;
+	eventList: any=[]
 
 
+	events: any[];
 	calendarOptions: Options;
 	@ViewChild(CalendarComponent) ucCalendar: CalendarComponent;
 
 	constructor(
 		private validateService: ValidateService,
 		private flashMessage: FlashMessagesService,
-		private authService: AuthService
+		private authService: AuthService,
+		private eventService: EventService
 	) {}
 
 	ngOnInit() {
+
+		this.eventService.getEvents().subscribe(data => {
 			this.calendarOptions = {
-			editable: true,
-			eventLimit: false,
-			header: {
-				left: 'prev,next today',
-				center: 'title',
-				right: 'month,agendaWeek,agendaDay,listMonth'
-			},
-			events: [],
-		};
-
-
+				editable: true,
+				defaultView: 'listWeek',
+				eventLimit: false,
+				header: {
+					left: 'prev,next today',
+					center: 'title',
+					right: 'month,agendaWeek,agendaDay,listMonth'
+				},
+				selectable: true,
+				events: this.eventList,
+			};
+		});
 
 		this.authService.getProfile().subscribe(profile => {
 			this.username=profile.user.username;
@@ -52,24 +58,32 @@ export class DashboardComponent implements OnInit {
  			 for(let i of data){
 				 if(i.username===this.username){
 					 const title= "Workout Name: "+ i.name+ ", Sets: "+ i.sets+ ", Reps: "+ i.reps;
-					 const date= i.date.substring(0, 10);
-					 console.log(date);
-					 this.calendarOptions.events= {"title": title, "start": "2018-06-24"};
+					 const date= i.date;
+					 let newdata: any={
+	 						title: title,
+	 						start: date
+	 					};
+	 					this.eventList.push(newdata);
 				 }
 			 }
+			 console.log(this.eventList);
  		 	},
  			err => {
  				console.log(err);
  				return false;
  			});
     },
-   err => {
-     console.log(err);
-     return false;
-   });
-
-	 // console.log(this.calendarOptions.events);
+	   err => {
+	     console.log(err);
+	     return false;
+	   });
 	}
+
+	loadAgain() {
+	this.eventService.getEvents().subscribe(data => {
+		this.events = this.eventList;
+	});
+ }
 
 
 

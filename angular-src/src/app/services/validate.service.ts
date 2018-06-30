@@ -41,7 +41,20 @@ export class ValidateService {
 		}
 
 		validateDate(event){
-		  const re = /^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/([12][0-9]{3})$/;
-			return re.test(event.date)
+		  const date= event.date.toString()
+			if(date.length===10){
+				console.log(date.length);
+				if(date.substring(4,5)==="-" && date.substring(7,8)==="-"){
+					const day= date.substring(0,4);
+					const month= date.substring(5,7);
+					const year= date.substring(8, 10);
+					const newdate= day +"-" + month + "-"+ year;
+					if(newdate===date){
+						console.log(date);
+							return true;
+					}
+				}
+			}
+			return false;
 	  }
 }

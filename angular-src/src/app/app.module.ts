@@ -5,6 +5,7 @@ import { FormsModule} from "@angular/forms";
 import { HttpModule} from "@angular/http";
 import {FlashMessagesModule} from "angular2-flash-messages";
 import {AuthService} from "./services/auth.service";
+import {EventService} from "./services/event.service";
 import {AuthGuard} from "./guards/auth.guard";
 
 import { FullCalendarModule } from 'ng-fullcalendar';
@@ -46,7 +47,7 @@ const appRoutes: Routes=[
     RouterModule.forRoot(appRoutes),
     FlashMessagesModule.forRoot()
   ],
-  providers: [ValidateService, AuthService, AuthGuard],
+  providers: [ValidateService, AuthService, AuthGuard, EventService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
