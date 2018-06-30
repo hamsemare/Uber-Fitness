@@ -16,6 +16,7 @@ import {EventService} from "../../services/event.service";
 })
 export class DashboardComponent implements OnInit {
 	name: String;
+	weight:String;
 	date: String;
 	sets: String;
 	reps: String;
@@ -57,7 +58,7 @@ export class DashboardComponent implements OnInit {
 			this.authService.getEvents().subscribe(data => {
  			 for(let i of data){
 				 if(i.username===this.username){
-					 const title= "Workout Name: "+ i.name+ ", Sets: "+ i.sets+ ", Reps: "+ i.reps;
+					 const title= "Workout Name: "+ i.name+ ", Weight: "+ i.weight+ ", Sets: "+ i.sets+ ", Reps: "+ i.reps;
 					 const date= i.date;
 					 let newdata: any={
 	 						title: title,
@@ -90,6 +91,7 @@ export class DashboardComponent implements OnInit {
 	onSubmit(){
 	  	const event={
 		  	name: this.name,
+				weight: this.weight,
 		  	date: this.date,
 		  	sets: this.sets,
 	  		reps: this.reps,
@@ -111,6 +113,16 @@ export class DashboardComponent implements OnInit {
 	  	}
 			else{
 				document.getElementById('date').style.borderColor = "";
+			}
+
+			//Require fields
+	  	if(! this.validateService.validateweights(event)){
+	  		this.flashMessage.show("Please Enter a Number", {cssClass: "alert-danger", timeout: 1000});
+				document.getElementById('weight').style.borderColor = "red";
+	  		return false;
+	  	}
+			else{
+				document.getElementById('weight').style.borderColor = "";
 			}
 
 			//Require fields
@@ -151,9 +163,5 @@ export class DashboardComponent implements OnInit {
 					document.getElementById('cal').style.display = "none";
 	  		}
 		  });
-	}
-	//Take the event that was clicked and copy its content to the add workout
-	eventClick(eventObj){
-		console.log(eventObj.title);
 	}
 }

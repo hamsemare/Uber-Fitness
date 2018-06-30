@@ -35,6 +35,9 @@ export class ValidateService {
 		validateSets(event){
 			 return !isNaN(Number(event.sets.toString()));
 		}
+		validateweights(event){
+			 return !isNaN(Number(event.weight.toString()));
+		}
 
 	 	validateReps(event){
 			return !isNaN(Number(event.reps.toString()));
