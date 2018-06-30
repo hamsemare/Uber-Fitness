@@ -21,7 +21,7 @@ mongoose.connection.on("error", function(err){
 
 const app=express();
 //Set the port
-const port=3000;
+const port=process.env.PORT || 8080;
 
 
 //Body parser  Middleware
