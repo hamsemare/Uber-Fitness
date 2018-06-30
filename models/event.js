@@ -38,10 +38,3 @@ module.exports.addEvent= function(newEvent, callback){
 	console.log(newEvent);
 	newEvent.save(callback);
 }
-
-// /******/
-// //Get all events of a username
-// module.exports.getEventsByUsername= function(username, callback){
-// 	const query= {username: username};
-// 	Event.findAll(query, callback);
-// }

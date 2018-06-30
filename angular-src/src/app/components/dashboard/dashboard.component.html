@@ -13,6 +13,9 @@
 	#add:hover{
 		text-decoration: underline;
 	}
+	#id01{
+		display: none;
+	}
 </style>
 
 
@@ -30,7 +33,7 @@
 	</div>
 
 	<div id="id01" class="id01">
-    <div style="margin-left: 20em;  margin-top: 10px; max-width:600px; border: 4mm ridge black;" >
+    <div style="margin-top: 10px; max-width:600px; border: 4mm ridge black; margin: 0 auto; padding-left: 20px; padding-right: 20px;" >
 			<form (submit)= "onSubmit()">
 				<h2 class= "page-header" style="font-size: 50px; text-align: center; margin-top: 50px; margin-bottom: 50px; text-transform: uppercase; text-decoration: underline">ADD WORKOUT</h2>
 				<input id="name" style="font-size: 1.2em;  margin-bottom: 40px" class="form-control" type="text" [(ngModel)]="name" name="name" placeholder="Name of Workout">

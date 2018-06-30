@@ -8,6 +8,7 @@ import {ValidateService} from "../../services/validate.service";
 import {FlashMessagesService} from "angular2-flash-messages";
 import {AuthService} from "../../services/auth.service";
 
+
 @Component({
 	selector: 'app-dashboard',
 	templateUrl: './dashboard.component.html',
@@ -20,6 +21,7 @@ export class DashboardComponent implements OnInit {
 	reps: String;
 	username: String;
 
+
 	calendarOptions: Options;
 	@ViewChild(CalendarComponent) ucCalendar: CalendarComponent;
 
@@ -28,8 +30,9 @@ export class DashboardComponent implements OnInit {
 		private flashMessage: FlashMessagesService,
 		private authService: AuthService
 	) {}
+
 	ngOnInit() {
-		this.calendarOptions = {
+			this.calendarOptions = {
 			editable: true,
 			eventLimit: false,
 			header: {
@@ -37,19 +40,35 @@ export class DashboardComponent implements OnInit {
 				center: 'title',
 				right: 'month,agendaWeek,agendaDay,listMonth'
 			},
-			events: [{title  : 'event1',
-			start  : '2018-06-01'}],
+			events: [],
 		};
+
 
 
 		this.authService.getProfile().subscribe(profile => {
 			this.username=profile.user.username;
-			console.log(this.username);
+			//Got the list of workouts
+			this.authService.getEvents().subscribe(data => {
+ 			 for(let i of data){
+				 if(i.username===this.username){
+					 const title= "Workout Name: "+ i.name+ ", Sets: "+ i.sets+ ", Reps: "+ i.reps;
+					 const date= i.date.substring(0, 10);
+					 console.log(date);
+					 this.calendarOptions.events= {"title": title, "start": "2018-06-24"};
+				 }
+			 }
+ 		 	},
+ 			err => {
+ 				console.log(err);
+ 				return false;
+ 			});
     },
-     err => {
-       console.log(err);
-       return false;
-     });
+   err => {
+     console.log(err);
+     return false;
+   });
+
+	 // console.log(this.calendarOptions.events);
 	}
 
 
@@ -107,26 +126,18 @@ export class DashboardComponent implements OnInit {
 	  	this.authService.addEvent(event).subscribe(data => {
 				if(data.success){
 		  			this.flashMessage.show("WORKOUT ADDED", {cssClass: "alert-success", timeout: 1500});
+						document.getElementById('id01').style.display = "none";
+						document.getElementById('cal').style.display = "block";
+
 		  		}
 	  		else{
 					console.log(data.msg);
 					this.flashMessage.show("Something went Wrong", {cssClass: "alert-danger", timeout: 1500});
+					document.getElementById('id01').style.display = "block";
+					document.getElementById('cal').style.display = "none";
 	  		}
 		  });
-
-			// // Get the event
-	  	// this.authService.getEvents().subscribe(data => {
-			// 	if(data.success){
-		  // 			this.flashMessage.show("WORKOUT ADDED", {cssClass: "alert-success", timeout: 1500});
-		  // 		}
-	  	// 	else{
-			// 		console.log(data.msg);
-			// 		this.flashMessage.show("Something went Wrong", {cssClass: "alert-danger", timeout: 1500});
-	  	// 	}
-		  // });
-	// }
 	}
-
 	//Take the event that was clicked and copy its content to the add workout
 	eventClick(eventObj){
 		console.log(eventObj.title);

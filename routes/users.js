@@ -102,15 +102,15 @@ router.post("/addEvent", function(req, res, next){
 });
 
 router.get('/events', function(req, res, next) {
-  Event.find({}, function(err, events) {
-    var eventList = {};
+	var eventList=[];
+	var allEvents={};
 
-    events.forEach(function(event) {
-      eventList[event._id] = event;
-    });
-
-    res.send(eventsList);
-  });
+	Event.find({}, function(err, events) {
+	 events.forEach(function(event) {
+		 eventList.push(event);
+	 });
+	 res.json(eventList);
+ });
 });
 
 
