@@ -86,6 +86,7 @@ router.post("/addEvent", function(req, res, next){
 	let newEvent= new Event({
 		username: req.body.username,
 		name: req.body.name,
+		weight: req.body.weight,
 		date: req.body.date,
 		reps: req.body.reps,
 		sets: req.body.sets

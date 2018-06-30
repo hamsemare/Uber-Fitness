@@ -472,7 +472,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<html>\n\n<head>\n\t<meta charset=\"UTF-8\">\n\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n\t<link rel=\"stylesheet\" href=\"https://www.w3schools.com/w3css/4/w3.css\">\n\t<meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\n\t<title>UBER-FITNESS</title>\n</head>\n\n\n<style media=\"screen\">\n\t#add:hover{\n\t\ttext-decoration: underline;\n\t}\n\t#id01{\n\t\tdisplay: none;\n\t}\n</style>\n\n\n<body>\n\n\t<div id=\"cal\" class=\"cal\">\n\t\t<p id=\"add\" style=\"text-align: right; color: #D76417; font-size: 1.5em\"><a  onclick=\"document.getElementById('id01').style.display='block'; document.getElementById('cal').style.display='none'\" >ADD WORKOUT</a></p>\n\t\t<br/>\n\t\t<h2 class= \"page-header\" style=\"font-size: 50px; text-align: center; margin-top: 50px; margin-bottom: 50px; text-transform: uppercase; text-decoration: underline\">Uber-Fitness Calendar</h2>\n\t\t<br/>\n\t\t<div *ngIf=\"calendarOptions\">\n\t\t\t<ng-fullcalendar #ucCalendar [options]=\"calendarOptions\" [(eventsModel)]=\"events\"></ng-fullcalendar>\n\t\t</div>\n\t</div>\n\n\t<div id=\"id01\" class=\"id01\">\n    <div style=\"margin-top: 10px; max-width:600px; border: 4mm ridge black; margin: 0 auto; padding-left: 20px; padding-right: 20px;\" >\n\t\t\t<form (submit)= \"onSubmit()\">\n\t\t\t\t<h2 class= \"page-header\" style=\"font-size: 50px; text-align: center; margin-top: 50px; margin-bottom: 50px; text-transform: uppercase; text-decoration: underline\">ADD WORKOUT</h2>\n\t\t\t\t<input id=\"name\" style=\"font-size: 1.2em;  margin-bottom: 40px\" class=\"form-control\" type=\"text\" [(ngModel)]=\"name\" name=\"name\" placeholder=\"Name of Workout\">\n\t\t\t\t<input id=\"date\" style=\"font-size: 1.2em;  margin-bottom: 40px\" class=\"form-control\" type=\"text\" name=\"date\" [(ngModel)]=\"date\" placeholder=\"Enter Date (YYYY-MM-DD)\" >\n\t\t\t\t<input id=\"sets\" style=\"font-size: 1.2em;  margin-bottom: 40px\" class=\"form-control\" type=\"text\" name=\"sets\"[(ngModel)]=\"sets\" placeholder=\"Enter # of Sets\">\n\t\t\t\t<input id=\"reps\" style=\"font-size: 1.2em;  margin-bottom: 40px\" class=\"form-control\" type=\"text\" name=\"reps\" [(ngModel)]=\"reps\" placeholder=\"Enter # of Reps\">\n\t\t\t\t<div class=\"w3-container w3-border-top w3-padding-16 w3-light-grey\">\n\t\t\t\t\t<input style=\"font-size: 20px; margin-top: 20px\" type=\"submit\" class=\"btn btn-success w3-right\"  value=\"SUBMIT\">\n\t\t\t\t\t<input style=\"font-size: 20px; margin-top: 20px\" type=\"button\" class=\"btn btn-primary\"  onclick=\"document.getElementById('id01').style.display='none'; document.getElementById('cal').style.display='block'\" value=\"CANCEL\">\n\t      </div>\n\t\t\t</form>\n   </div>\n  </div>\n</body>\n</html>\n"
+module.exports = "<html>\n\n<head>\n\t<meta charset=\"UTF-8\">\n\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n\t<link rel=\"stylesheet\" href=\"https://www.w3schools.com/w3css/4/w3.css\">\n\t<meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\n\t<title>UBER-FITNESS</title>\n</head>\n\n\n<style media=\"screen\">\n\t#add:hover{\n\t\ttext-decoration: underline;\n\t}\n\t#id01{\n\t\tdisplay: none;\n\t}\n</style>\n\n\n<body>\n\n\t<div id=\"cal\" class=\"cal\">\n\t\t<p id=\"add\" style=\"text-align: right; color: #D76417; font-size: 1.5em\"><a  onclick=\"document.getElementById('id01').style.display='block'; document.getElementById('cal').style.display='none'\" >ADD WORKOUT</a></p>\n\t\t<br/>\n\t\t<h2 class= \"page-header\" style=\"font-size: 50px; text-align: center; margin-top: 50px; margin-bottom: 50px; text-transform: uppercase; text-decoration: underline\">Uber-Fitness Calendar</h2>\n\t\t<br/>\n\t\t<div *ngIf=\"calendarOptions\">\n\t\t\t<ng-fullcalendar #ucCalendar [options]=\"calendarOptions\" [(eventsModel)]=\"events\"></ng-fullcalendar>\n\t\t</div>\n\t</div>\n\n\t<div id=\"id01\" class=\"id01\">\n    <div style=\"margin-top: 10px; max-width:600px; border: 4mm ridge black; margin: 0 auto; padding-left: 20px; padding-right: 20px;\" >\n\t\t\t<form (submit)= \"onSubmit()\">\n\t\t\t\t<h2 class= \"page-header\" style=\"font-size: 50px; text-align: center; margin-top: 50px; margin-bottom: 50px; text-transform: uppercase; text-decoration: underline\">ADD WORKOUT</h2>\n\t\t\t\t<input id=\"name\" style=\"font-size: 1.2em;  margin-bottom: 40px\" class=\"form-control\" type=\"text\" [(ngModel)]=\"name\" name=\"name\" placeholder=\"Name of Workout\">\n\t\t\t\t<input id=\"date\" style=\"font-size: 1.2em;  margin-bottom: 40px\" class=\"form-control\" type=\"text\" name=\"date\" [(ngModel)]=\"date\" placeholder=\"Enter Date (YYYY-MM-DD)\" >\n\t\t\t\t<input id=\"weight\" style=\"font-size: 1.2em;  margin-bottom: 40px\" class=\"form-control\" type=\"text\" name=\"weight\"[(ngModel)]=\"weight\" placeholder=\"Enter Weight\">\n\t\t\t\t<input id=\"sets\" style=\"font-size: 1.2em;  margin-bottom: 40px\" class=\"form-control\" type=\"text\" name=\"sets\"[(ngModel)]=\"sets\" placeholder=\"Enter # of Sets\">\n\t\t\t\t<input id=\"reps\" style=\"font-size: 1.2em;  margin-bottom: 40px\" class=\"form-control\" type=\"text\" name=\"reps\" [(ngModel)]=\"reps\" placeholder=\"Enter # of Reps\">\n\t\t\t\t<div class=\"w3-container w3-border-top w3-padding-16 w3-light-grey\">\n\t\t\t\t\t<input style=\"font-size: 20px; margin-top: 20px\" type=\"submit\" class=\"btn btn-success w3-right\"  value=\"SUBMIT\">\n\t\t\t\t\t<input style=\"font-size: 20px; margin-top: 20px\" type=\"button\" class=\"btn btn-primary\"  onclick=\"document.getElementById('id01').style.display='none'; document.getElementById('cal').style.display='block'\" value=\"CANCEL\">\n\t      </div>\n\t\t\t</form>\n   </div>\n  </div>\n</body>\n</html>\n"
 
 /***/ }),
 
@@ -541,7 +541,7 @@ var DashboardComponent = /** @class */ (function () {
                 for (var _i = 0, data_1 = data; _i < data_1.length; _i++) {
                     var i = data_1[_i];
                     if (i.username === _this.username) {
-                        var title = "Workout Name: " + i.name + ", Sets: " + i.sets + ", Reps: " + i.reps;
+                        var title = "Workout Name: " + i.name + ", Weight: " + i.weight + ", Sets: " + i.sets + ", Reps: " + i.reps;
                         var date = i.date;
                         var newdata = {
                             title: title,
@@ -570,6 +570,7 @@ var DashboardComponent = /** @class */ (function () {
         var _this = this;
         var event = {
             name: this.name,
+            weight: this.weight,
             date: this.date,
             sets: this.sets,
             reps: this.reps,
@@ -588,6 +589,15 @@ var DashboardComponent = /** @class */ (function () {
         }
         else {
             document.getElementById('date').style.borderColor = "";
+        }
+        //Require fields
+        if (!this.validateService.validateweights(event)) {
+            this.flashMessage.show("Please Enter a Number", { cssClass: "alert-danger", timeout: 1000 });
+            document.getElementById('weight').style.borderColor = "red";
+            return false;
+        }
+        else {
+            document.getElementById('weight').style.borderColor = "";
         }
         //Require fields
         if (!this.validateService.validateSets(event)) {
@@ -621,10 +631,6 @@ var DashboardComponent = /** @class */ (function () {
                 document.getElementById('cal').style.display = "none";
             }
         });
-    };
-    //Take the event that was clicked and copy its content to the add workout
-    DashboardComponent.prototype.eventClick = function (eventObj) {
-        console.log(eventObj.title);
     };
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])(ng_fullcalendar__WEBPACK_IMPORTED_MODULE_1__["CalendarComponent"]),
@@ -1312,6 +1318,9 @@ var ValidateService = /** @class */ (function () {
     };
     ValidateService.prototype.validateSets = function (event) {
         return !isNaN(Number(event.sets.toString()));
+    };
+    ValidateService.prototype.validateweights = function (event) {
+        return !isNaN(Number(event.weight.toString()));
     };
     ValidateService.prototype.validateReps = function (event) {
         return !isNaN(Number(event.reps.toString()));

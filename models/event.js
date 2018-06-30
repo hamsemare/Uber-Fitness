@@ -13,6 +13,11 @@ const Eventschema= mongoose.Schema({
 		type: String,
 		required: true
 	},
+	weight: {
+		type: Number,
+		required: true
+	},
+
 	sets: {
 		type: Number,
 		required: true
