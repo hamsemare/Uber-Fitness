@@ -16,28 +16,28 @@ export class AuthService {
 	addEvent(event){
 		let headers = new Headers();
 		headers.append('Content-Type', 'application/json');
-		return this.http.post('http://localhost:3000/users/addEvent', event, {headers: headers})
+		return this.http.post('users/addEvent', event, {headers: headers})
 		.map(res => res.json());
 	}
 
 	getEvents(){
 		let headers = new Headers();
 		headers.append('Content-Type', 'application/json');
-		return this.http.get('http://localhost:3000/users/events', {headers: headers})
+		return this.http.get('users/events', {headers: headers})
 		.map(res => res.json());
 	}
 
 	registerUser(user) {
 		let headers = new Headers();
 		headers.append('Content-Type', 'application/json');
-		return this.http.post('http://localhost:3000/users/register', user, {headers: headers})
+		return this.http.post('users/register', user, {headers: headers})
 		.map(res => res.json());
 	}
 
 	authenticateUser(user) {
 		let headers = new Headers();
 		headers.append('Content-Type', 'application/json');
-		return this.http.post('http://localhost:3000/users/authenticate', user, {headers: headers})
+		return this.http.post('users/authenticate', user, {headers: headers})
 		.map(res => res.json());
 	}
 
@@ -46,7 +46,7 @@ export class AuthService {
 		this.loadToken();
 		headers.append('Authorization', this.authToken);
 		headers.append('Content-Type', 'application/json');
-		return this.http.get('http://localhost:3000/users/profile', {headers: headers})
+		return this.http.get('users/profile', {headers: headers})
 		.map(res => res.json());
 	}
 
