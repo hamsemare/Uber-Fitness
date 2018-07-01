@@ -379,17 +379,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! angular2-flash-messages */ "./node_modules/angular2-flash-messages/module/index.js");
 /* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(angular2_flash_messages__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./services/auth.service */ "./src/app/services/auth.service.ts");
-/* harmony import */ var _services_event_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./services/event.service */ "./src/app/services/event.service.ts");
-/* harmony import */ var _guards_auth_guard__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./guards/auth.guard */ "./src/app/guards/auth.guard.ts");
-/* harmony import */ var ng_fullcalendar__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ng-fullcalendar */ "./node_modules/ng-fullcalendar/ng-fullcalendar.es5.js");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _components_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/navbar/navbar.component */ "./src/app/components/navbar/navbar.component.ts");
-/* harmony import */ var _components_login_login_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/login/login.component */ "./src/app/components/login/login.component.ts");
-/* harmony import */ var _components_register_register_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/register/register.component */ "./src/app/components/register/register.component.ts");
-/* harmony import */ var _components_home_home_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/home/home.component */ "./src/app/components/home/home.component.ts");
-/* harmony import */ var _components_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/dashboard/dashboard.component */ "./src/app/components/dashboard/dashboard.component.ts");
-/* harmony import */ var _components_profile_profile_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/profile/profile.component */ "./src/app/components/profile/profile.component.ts");
-/* harmony import */ var _services_validate_service__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./services/validate.service */ "./src/app/services/validate.service.ts");
+/* harmony import */ var _guards_auth_guard__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./guards/auth.guard */ "./src/app/guards/auth.guard.ts");
+/* harmony import */ var ng_fullcalendar__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ng-fullcalendar */ "./node_modules/ng-fullcalendar/ng-fullcalendar.es5.js");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _components_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/navbar/navbar.component */ "./src/app/components/navbar/navbar.component.ts");
+/* harmony import */ var _components_login_login_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/login/login.component */ "./src/app/components/login/login.component.ts");
+/* harmony import */ var _components_register_register_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/register/register.component */ "./src/app/components/register/register.component.ts");
+/* harmony import */ var _components_home_home_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/home/home.component */ "./src/app/components/home/home.component.ts");
+/* harmony import */ var _components_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/dashboard/dashboard.component */ "./src/app/components/dashboard/dashboard.component.ts");
+/* harmony import */ var _components_profile_profile_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/profile/profile.component */ "./src/app/components/profile/profile.component.ts");
+/* harmony import */ var _services_validate_service__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./services/validate.service */ "./src/app/services/validate.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -413,13 +412,12 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
-
 var appRoutes = [
-    { path: "", component: _components_home_home_component__WEBPACK_IMPORTED_MODULE_14__["HomeComponent"] },
-    { path: "register", component: _components_register_register_component__WEBPACK_IMPORTED_MODULE_13__["RegisterComponent"] },
-    { path: "login", component: _components_login_login_component__WEBPACK_IMPORTED_MODULE_12__["LoginComponent"] },
-    { path: "dashboard", component: _components_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_15__["DashboardComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_8__["AuthGuard"]] },
-    { path: "profile", component: _components_profile_profile_component__WEBPACK_IMPORTED_MODULE_16__["ProfileComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_8__["AuthGuard"]] }
+    { path: "", component: _components_home_home_component__WEBPACK_IMPORTED_MODULE_13__["HomeComponent"] },
+    { path: "register", component: _components_register_register_component__WEBPACK_IMPORTED_MODULE_12__["RegisterComponent"] },
+    { path: "login", component: _components_login_login_component__WEBPACK_IMPORTED_MODULE_11__["LoginComponent"] },
+    { path: "dashboard", component: _components_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_14__["DashboardComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_7__["AuthGuard"]] },
+    { path: "profile", component: _components_profile_profile_component__WEBPACK_IMPORTED_MODULE_15__["ProfileComponent"], canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_7__["AuthGuard"]] }
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -427,24 +425,24 @@ var AppModule = /** @class */ (function () {
     AppModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_10__["AppComponent"],
-                _components_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_11__["NavbarComponent"],
-                _components_login_login_component__WEBPACK_IMPORTED_MODULE_12__["LoginComponent"],
-                _components_register_register_component__WEBPACK_IMPORTED_MODULE_13__["RegisterComponent"],
-                _components_home_home_component__WEBPACK_IMPORTED_MODULE_14__["HomeComponent"],
-                _components_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_15__["DashboardComponent"],
-                _components_profile_profile_component__WEBPACK_IMPORTED_MODULE_16__["ProfileComponent"]
+                _app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"],
+                _components_navbar_navbar_component__WEBPACK_IMPORTED_MODULE_10__["NavbarComponent"],
+                _components_login_login_component__WEBPACK_IMPORTED_MODULE_11__["LoginComponent"],
+                _components_register_register_component__WEBPACK_IMPORTED_MODULE_12__["RegisterComponent"],
+                _components_home_home_component__WEBPACK_IMPORTED_MODULE_13__["HomeComponent"],
+                _components_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_14__["DashboardComponent"],
+                _components_profile_profile_component__WEBPACK_IMPORTED_MODULE_15__["ProfileComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
-                ng_fullcalendar__WEBPACK_IMPORTED_MODULE_9__["FullCalendarModule"],
+                ng_fullcalendar__WEBPACK_IMPORTED_MODULE_8__["FullCalendarModule"],
                 _angular_http__WEBPACK_IMPORTED_MODULE_4__["HttpModule"],
                 _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forRoot(appRoutes),
                 angular2_flash_messages__WEBPACK_IMPORTED_MODULE_5__["FlashMessagesModule"].forRoot()
             ],
-            providers: [_services_validate_service__WEBPACK_IMPORTED_MODULE_17__["ValidateService"], _services_auth_service__WEBPACK_IMPORTED_MODULE_6__["AuthService"], _guards_auth_guard__WEBPACK_IMPORTED_MODULE_8__["AuthGuard"], _services_event_service__WEBPACK_IMPORTED_MODULE_7__["EventService"]],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_10__["AppComponent"]]
+            providers: [_services_validate_service__WEBPACK_IMPORTED_MODULE_16__["ValidateService"], _services_auth_service__WEBPACK_IMPORTED_MODULE_6__["AuthService"], _guards_auth_guard__WEBPACK_IMPORTED_MODULE_7__["AuthGuard"]],
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_9__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
@@ -492,7 +490,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! angular2-flash-messages */ "./node_modules/angular2-flash-messages/module/index.js");
 /* harmony import */ var angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _services_auth_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/auth.service */ "./src/app/services/auth.service.ts");
-/* harmony import */ var _services_event_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../services/event.service */ "./src/app/services/event.service.ts");
 // Citations
 // https://www.npmjs.com/package/ng-fullcalendar
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
@@ -509,31 +506,30 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-
 var DashboardComponent = /** @class */ (function () {
-    function DashboardComponent(validateService, flashMessage, authService, eventService) {
+    function DashboardComponent(validateService, flashMessage, authService) {
         this.validateService = validateService;
         this.flashMessage = flashMessage;
         this.authService = authService;
-        this.eventService = eventService;
-        this.eventList = [];
     }
     DashboardComponent.prototype.ngOnInit = function () {
+        this.getEvents();
+        this.calendarOptions = {
+            editable: true,
+            defaultView: 'listMonth',
+            eventLimit: false,
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,agendaWeek,agendaDay,listMonth'
+            },
+            selectable: true,
+            events: []
+        };
+    };
+    DashboardComponent.prototype.getEvents = function () {
         var _this = this;
-        this.eventService.getEvents().subscribe(function (data) {
-            _this.calendarOptions = {
-                editable: true,
-                defaultView: 'listWeek',
-                eventLimit: false,
-                header: {
-                    left: 'prev,next today',
-                    center: 'title',
-                    right: 'month,agendaWeek,agendaDay,listMonth'
-                },
-                selectable: true,
-                events: _this.eventList,
-            };
-        });
+        var eventList = [];
         this.authService.getProfile().subscribe(function (profile) {
             _this.username = profile.user.username;
             //Got the list of workouts
@@ -547,10 +543,12 @@ var DashboardComponent = /** @class */ (function () {
                             title: title,
                             start: date
                         };
-                        _this.eventList.push(newdata);
+                        eventList.push(newdata);
                     }
                 }
-                console.log(_this.eventList);
+                console.log(_this.events);
+                _this.events = eventList;
+                console.log(_this.events);
             }, function (err) {
                 console.log(err);
                 return false;
@@ -558,12 +556,6 @@ var DashboardComponent = /** @class */ (function () {
         }, function (err) {
             console.log(err);
             return false;
-        });
-    };
-    DashboardComponent.prototype.loadAgain = function () {
-        var _this = this;
-        this.eventService.getEvents().subscribe(function (data) {
-            _this.events = _this.eventList;
         });
     };
     DashboardComponent.prototype.onSubmit = function () {
@@ -623,6 +615,13 @@ var DashboardComponent = /** @class */ (function () {
                 _this.flashMessage.show("WORKOUT ADDED", { cssClass: "alert-success", timeout: 1500 });
                 document.getElementById('id01').style.display = "none";
                 document.getElementById('cal').style.display = "block";
+                var title = "Workout Name: " + event.name + ", Weight: " + event.weight + ", Sets: " + event.sets + ", Reps: " + event.reps;
+                var date = event.date;
+                var newdata = {
+                    title: title,
+                    start: date
+                };
+                _this.getEvents();
             }
             else {
                 console.log(data.msg);
@@ -644,8 +643,7 @@ var DashboardComponent = /** @class */ (function () {
         }),
         __metadata("design:paramtypes", [_services_validate_service__WEBPACK_IMPORTED_MODULE_2__["ValidateService"],
             angular2_flash_messages__WEBPACK_IMPORTED_MODULE_3__["FlashMessagesService"],
-            _services_auth_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"],
-            _services_event_service__WEBPACK_IMPORTED_MODULE_5__["EventService"]])
+            _services_auth_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"]])
     ], DashboardComponent);
     return DashboardComponent;
 }());
@@ -1220,52 +1218,6 @@ var AuthService = /** @class */ (function () {
         __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_1__["Http"]])
     ], AuthService);
     return AuthService;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/services/event.service.ts":
-/*!*******************************************!*\
-  !*** ./src/app/services/event.service.ts ***!
-  \*******************************************/
-/*! exports provided: EventService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EventService", function() { return EventService; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var rxjs_Observable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/Observable */ "./node_modules/rxjs-compat/_esm5/Observable.js");
-/* harmony import */ var rxjs_add_observable_of__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/add/observable/of */ "./node_modules/rxjs-compat/_esm5/add/observable/of.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var EventService = /** @class */ (function () {
-    function EventService() {
-        this.data = [];
-    }
-    EventService.prototype.getEvents = function () {
-        var events = [];
-        events = this.data;
-        console.log(this.data);
-        return rxjs_Observable__WEBPACK_IMPORTED_MODULE_1__["Observable"].of(events);
-    };
-    EventService = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
-        __metadata("design:paramtypes", [])
-    ], EventService);
-    return EventService;
 }());
 
 
