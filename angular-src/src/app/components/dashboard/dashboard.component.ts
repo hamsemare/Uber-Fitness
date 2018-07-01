@@ -7,7 +7,7 @@ import { Options } from 'fullcalendar';
 import {ValidateService} from "../../services/validate.service";
 import {FlashMessagesService} from "angular2-flash-messages";
 import {AuthService} from "../../services/auth.service";
-import {EventService} from "../../services/event.service";
+
 
 @Component({
 	selector: 'app-dashboard',
@@ -21,7 +21,6 @@ export class DashboardComponent implements OnInit {
 	sets: String;
 	reps: String;
 	username: String;
-	eventList: any=[]
 
 
 	events: any[];
@@ -31,62 +30,59 @@ export class DashboardComponent implements OnInit {
 	constructor(
 		private validateService: ValidateService,
 		private flashMessage: FlashMessagesService,
-		private authService: AuthService,
-		private eventService: EventService
+		private authService: AuthService
 	) {}
 
 	ngOnInit() {
+		this.getEvents();
+		this.calendarOptions = {
+			editable: true,
+			defaultView: 'listMonth',
+			eventLimit: false,
+			header: {
+				left: 'prev,next today',
+				center: 'title',
+				right: 'month,agendaWeek,agendaDay,listMonth'
+			},
+			selectable: true,
+			events: []
+		};
 
-		this.eventService.getEvents().subscribe(data => {
-			this.calendarOptions = {
-				editable: true,
-				defaultView: 'listWeek',
-				eventLimit: false,
-				header: {
-					left: 'prev,next today',
-					center: 'title',
-					right: 'month,agendaWeek,agendaDay,listMonth'
-				},
-				selectable: true,
-				events: this.eventList,
-			};
-		});
 
-		this.authService.getProfile().subscribe(profile => {
-			this.username=profile.user.username;
-			//Got the list of workouts
-			this.authService.getEvents().subscribe(data => {
- 			 for(let i of data){
-				 if(i.username===this.username){
-					 const title= "Workout Name: "+ i.name+ ", Weight: "+ i.weight+ ", Sets: "+ i.sets+ ", Reps: "+ i.reps;
-					 const date= i.date;
-					 let newdata: any={
-	 						title: title,
-	 						start: date
-	 					};
-	 					this.eventList.push(newdata);
-				 }
-			 }
-			 console.log(this.eventList);
- 		 	},
- 			err => {
- 				console.log(err);
- 				return false;
- 			});
-    },
-	   err => {
-	     console.log(err);
-	     return false;
-	   });
 	}
 
-	loadAgain() {
-	this.eventService.getEvents().subscribe(data => {
-		this.events = this.eventList;
-	});
- }
+getEvents(){
+	let eventList: any=[];
 
-
+	this.authService.getProfile().subscribe(profile => {
+		this.username=profile.user.username;
+		//Got the list of workouts
+		this.authService.getEvents().subscribe(data => {
+		 for(let i of data){
+			 if(i.username===this.username){
+				 const title= "Workout Name: "+ i.name+ ", Weight: "+ i.weight+ ", Sets: "+ i.sets+ ", Reps: "+ i.reps;
+				 const date= i.date;
+				 let newdata: any={
+						title: title,
+						start: date
+					};
+					eventList.push(newdata);
+			 }
+		 }
+		 console.log(this.events);
+		 this.events= eventList;
+		 console.log(this.events);
+		},
+		err => {
+			console.log(err);
+			return false;
+		});
+	},
+	 err => {
+		 console.log(err);
+		 return false;
+	 });
+}
 
 	onSubmit(){
 	  	const event={
@@ -154,6 +150,15 @@ export class DashboardComponent implements OnInit {
 		  			this.flashMessage.show("WORKOUT ADDED", {cssClass: "alert-success", timeout: 1500});
 						document.getElementById('id01').style.display = "none";
 						document.getElementById('cal').style.display = "block";
+
+						const title= "Workout Name: "+ event.name+ ", Weight: "+ event.weight+ ", Sets: "+ event.sets+ ", Reps: "+ event.reps;
+						const date= event.date;
+						let newdata: any={
+							 title: title,
+							 start: date
+						 };
+
+						this.getEvents();
 
 		  		}
 	  		else{
