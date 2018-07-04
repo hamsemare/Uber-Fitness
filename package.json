@@ -14,6 +14,7 @@
     "express": "*",
     "googleapis": "^27.0.0",
     "jsonwebtoken": "*",
+    "letsencrypt": "^2.1.9",
     "mongoose": "*",
     "passport": "*",
     "passport-jwt": "*"
